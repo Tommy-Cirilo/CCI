@@ -1,9 +1,16 @@
+import java.util.HashMap;
+
 public class CCI {
 
-    /*public int positiveIntegerSolutions (int a, int b, int c) {
+//-------------------------------    Key Topics to Study & Master -----------------------------------------
 
-        return
-    }*/
+//Hash Maps
+    public void Hash () {
+
+    }
+
+
+
 
     // 1.1 Is Unique: implement an algorithm to determine if a string has all unique characters
     //what if you can't use additional data structures?
