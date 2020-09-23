@@ -4,12 +4,70 @@ public class CCI {
 
 //-------------------------------    Key Topics to Study & Master -----------------------------------------
 
-//Hash Maps
-    public void Hash () {
+    //Hash Maps
+    public void Hash() {
+        // Create a HashMap object called capitalCities
+        HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+        // Add keys and values use the .put method (Country, City)
+        capitalCities.put("England", "London");
+        capitalCities.put("Germany", "Berlin");
+        capitalCities.put("Norway", "Oslo");
+        capitalCities.put("USA", "Washington DC");
+        System.out.println(capitalCities);
+
+
+        //to access an individual item in the hash map, use the .get method
+        capitalCities.get("England");
+
+        //to remove an individual item in the hash map, use the .remove method
+        capitalCities.remove("England");
+
+        //to clear all items in the hash map, use .clear method
+//        capitalCities.clear();
+
+        //to find out how many items there are in the hashmap, use the .size method
+        capitalCities.size();
+
+
+        //Loop through the items of a HashMap with a for-each loop.
+        //Note: Use the keySet() method if you only want the keys, and use the values() method if you only want the values:
+
+        // Print keys
+        for (String i : capitalCities.keySet()) {
+            System.out.println(i);
+        }
+
+        // Print values
+        for (String i : capitalCities.values()) {
+            System.out.println(i);
+        }
+
+        // Print keys and values
+        for (String i : capitalCities.keySet()) {
+            System.out.println("key: " + i + " value: " + capitalCities.get(i));
+        }
+
+
+
+        // Another Example of using different types of keys and values
+        //Create a HashMap object called people that will store String keys and Integer values:
+
+        // Create a HashMap object called people
+        HashMap<String, Integer> people = new HashMap<String, Integer>();
+
+
+        // Add keys and values (Name, Age)
+        people.put("John", 32);
+        people.put("Steve", 30);
+        people.put("Angie", 33);
+
+        for (String i : people.keySet()) {
+            System.out.println("key: " + i + " value: " + people.get(i));
+        }
+
 
     }
-
-
 
 
     // 1.1 Is Unique: implement an algorithm to determine if a string has all unique characters
