@@ -121,6 +121,15 @@ public class CCI {
             System.out.println(word + ": " + isUniqueChars(word));
         }
 
+        //test for question 1.2 permutation
+        String[][] pairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "llloh"}};
+        for (String[] pair : pairs) {
+            String word1 = pair[0];
+            String word2 = pair[1];
+            boolean anagram = permutation(word1, word2);
+            System.out.println(word1 + ", " + word2 + ": " + anagram);
+        }
+
 
     }
 }
