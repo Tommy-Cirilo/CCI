@@ -133,7 +133,7 @@ public class CCI {
         return true; // letters array has no negative values, and therefore no positive values either
     }
 
-    //question 1.3
+    //question 1.3 question URLify
     // Assume string has sufficient free space at the end
     public static void replaceSpaces(char[] str, int trueLength) {
         int spaceCount = 0, index, i = 0;
@@ -166,7 +166,53 @@ public class CCI {
         return -1;
     }
 
+    //question 1.4 Palindrome Permutations
+    public static int getCharNumber(Character c) {
+        int a = Character.getNumericValue('a');
+        int z = Character.getNumericValue('z');
 
+        int val = Character.getNumericValue(c);
+        if (a <= val && val <= z) {
+            return val - a;
+        }
+        return -1;
+    }
+
+    //question 1.4 Palindrome Permutations Extended
+    public static int[] buildCharFrequencyTable(String phrase) {
+        int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
+        for (char c : phrase.toCharArray()) {
+            int x = getCharNumber(c);
+            if (x != -1) {
+                table[x]++;
+            }
+        }
+        return table;
+    }
+
+    //question 1.4 A Palindrome Permutatoins Extended
+    public static boolean checkMaxOneOdd(int[] table) {
+        boolean foundOdd = false;
+        for (int count : table) {
+            if (count % 2 == 1) {
+                if (foundOdd) {
+                    return false;
+                }
+                foundOdd = true;
+            }
+        }
+        return true;
+    }
+
+    /*public static boolean isPermutationOfPalindrome(String phrase) {
+        int[] table = Common.buildCharFrequencyTable(phrase);
+        return checkMaxOneOdd(table);
+    }*/
+
+
+
+
+//----------------Main Method For Testing ----------------------
     public static void main(String[] args) {
         //test for question 1.1
         String[] words = {"abcde", "hello", "apple", "kite", "padle"};
