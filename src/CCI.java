@@ -2,6 +2,7 @@ import java.util.HashMap;
 
 
 public class CCI {
+    private static CCI Common;
 
 //-------------------------------    Key Topics to Study & Master -----------------------------------------
 
@@ -190,7 +191,7 @@ public class CCI {
         return table;
     }
 
-    //question 1.4 A Palindrome Permutatoins Extended
+    //question 1.4 A Palindrome Permutations Extended
     public static boolean checkMaxOneOdd(int[] table) {
         boolean foundOdd = false;
         for (int count : table) {
@@ -203,6 +204,31 @@ public class CCI {
         }
         return true;
     }
+    
+    //question 1.4 B A palindrome permutations extended
+    public static boolean isPermutationOfPalindrome(String phrase) {
+        int countOdd = 0;
+        int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
+        for (char c : phrase.toCharArray()) {
+            int x = Common.getCharNumber(c);
+            if (x != -1) {
+                table[x]++;
+
+                if (table[x] % 2 == 1) {
+                    countOdd++;
+                } else {
+                    countOdd--;
+                }
+            }
+        }
+        return countOdd <= 1;
+    }
+
+
+
+
+
+    
 
     /*public static boolean isPermutationOfPalindrome(String phrase) {
         int[] table = Common.buildCharFrequencyTable(phrase);
@@ -228,6 +254,12 @@ public class CCI {
             boolean anagram = permutation(word1, word2);
             System.out.println(word1 + ", " + word2 + ": " + anagram);
         }
+
+        //test for question 1.2 permutations (B)
+        String pali = "Ratzs live on no evil starz";
+        System.out.println(isPermutationOfPalindrome(pali));
+        String pali2 = "Zeus was deified, saw Suez";
+        System.out.println(isPermutationOfPalindrome(pali2));
 
 
 
