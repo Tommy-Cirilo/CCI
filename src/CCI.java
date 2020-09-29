@@ -51,7 +51,6 @@ public class CCI {
         }
 
 
-
         // Another Example of using different types of keys and values
         //Create a HashMap object called people that will store String keys and Integer values:
 
@@ -157,6 +156,7 @@ public class CCI {
             }
         }
     }
+
     //question 1.3 part B
     public static int findLastCharacter(char[] str) {
         for (int i = str.length - 1; i >= 0; i--) {
@@ -204,7 +204,7 @@ public class CCI {
         }
         return true;
     }
-    
+
     //question 1.4 B A palindrome permutations extended
     public static boolean isPermutationOfPalindrome(String phrase) {
         int countOdd = 0;
@@ -236,9 +236,32 @@ public class CCI {
     }*/
 
 
+//---------------- Common Coding Interview Questions ---------------------
+
+//Fizz Buzz
+
+    public static void fizzBuzz() {
+        int n = 100;
+
+        //To loop through target number
+        for (int i = 1; i <= n; i ++){
+            if (i % 15 == 0) {
+                System.out.println("Fizz Buzz");
+            }
+            else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            }
+            else if (i % 3 == 0){
+                System.out.println("Fizz");
+            }
+            else {
+                System.out.println(i);
+            }
+        }
+    }
 
 
-//----------------Main Method For Testing ----------------------
+    //----------------Main Method For Testing ----------------------
     public static void main(String[] args) {
         //test for question 1.1
         String[] words = {"abcde", "hello", "apple", "kite", "padle"};
@@ -262,9 +285,8 @@ public class CCI {
         System.out.println(isPermutationOfPalindrome(pali2));
 
 
-
-
-
+        //test for fizz buzz
+        fizzBuzz();
 
     }
 }
