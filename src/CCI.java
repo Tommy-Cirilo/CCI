@@ -259,7 +259,11 @@ public class CCI {
             }
         }
     }
-
+    //        Power of four
+    public boolean powerOfFour(int n) {
+        double ln = Math.log10(n) / Math.log10(4);
+        return ln == (int) ln;
+    }
 
     //----------------Main Method For Testing ----------------------
     public static void main(String[] args) {
