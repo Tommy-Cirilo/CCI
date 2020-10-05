@@ -244,25 +244,62 @@ public class CCI {
         int n = 100;
 
         //To loop through target number
-        for (int i = 1; i <= n; i ++){
+        for (int i = 1; i <= n; i++) {
             if (i % 15 == 0) {
                 System.out.println("Fizz Buzz");
-            }
-            else if (i % 5 == 0) {
+            } else if (i % 5 == 0) {
                 System.out.println("Buzz");
-            }
-            else if (i % 3 == 0){
+            } else if (i % 3 == 0) {
                 System.out.println("Fizz");
-            }
-            else {
+            } else {
                 System.out.println(i);
             }
         }
     }
+
     //        Power of four
     public boolean powerOfFour(int n) {
         double ln = Math.log10(n) / Math.log10(4);
         return ln == (int) ln;
+    }
+
+    //      add Digits
+    /*Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
+    * Example:
+
+Input: 38
+Output: 2
+Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2.
+             Since 2 has only one digit, return it.*/
+
+    public static int addDigits(int num) {
+        if (num == 0) return 0;
+        if (num % 9 == 0) return 9;
+        return num % 9;
+    }
+
+//Length of last word
+    /*Given a string s consists of upper/lower-case alphabets and empty space characters ' ', return the length of last word
+    (last word means the last appearing word if we loop from left to right) in the string.
+
+If the last word does not exist, return 0.
+
+Note: A word is defined as a maximal substring consisting of non-space characters only.
+
+Example:
+
+Input: "Hello World"
+Output: 5*/
+
+    class Solution {
+        public int lengthOfLastWord(String s) {
+            if(s.equals(" ")) return 0;
+            s=s.trim();
+
+            String[] arrOfStr = s.split(" ");
+            String ss=arrOfStr[arrOfStr.length-1];
+            return ss.length();
+        }
     }
 
     //----------------Main Method For Testing ----------------------
@@ -291,6 +328,7 @@ public class CCI {
 
         //test for fizz buzz
         fizzBuzz();
+
 
     }
 }
